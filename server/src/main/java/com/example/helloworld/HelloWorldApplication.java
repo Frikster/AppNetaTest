@@ -4,6 +4,7 @@ import com.example.helloworld.core.Player;
 import com.example.helloworld.core.Template;
 import com.example.helloworld.db.PlayerDAO;
 import com.example.helloworld.resources.HelloWorldResource;
+import com.example.helloworld.resources.PlayerResource;
 import io.dropwizard.Application;
 import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.auth.AuthDynamicFeature;
@@ -64,9 +65,6 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
         final Template template = configuration.buildTemplate();
 
         environment.jersey().register(new HelloWorldResource(template));
-
-        // TODO add your resources here
-        System.out.println("GOT HERE");
-        System.out.println(configuration);
+        environment.jersey().register(new PlayerResource(dao));
     }
 }

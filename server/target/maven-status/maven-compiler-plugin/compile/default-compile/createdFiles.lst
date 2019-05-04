@@ -6,4 +6,5 @@ com/example/helloworld/resources/HelloWorldResource.class
 com/example/helloworld/HelloWorldConfiguration.class
 com/example/helloworld/db/PlayerDAO.class
 com/example/helloworld/HelloWorldApplication$1.class
+com/example/helloworld/resources/PlayerResource.class
 com/example/helloworld/core/Template.class
