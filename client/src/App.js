@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import SearchComponent from './search/search';
+
 class App extends Component {
   render() {
     return (
@@ -11,6 +13,7 @@ class App extends Component {
         <p className="App-intro">
           Your application will live here. While the server is running, you can edit the source, save and then reload the page to see your changes.
         </p>
+        <SearchComponent/>
       </div>
     );
   }
