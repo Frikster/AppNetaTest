@@ -4,7 +4,7 @@ class TableComponent extends Component {
   render() {
     return (
       <div >
-        <table class="sortable"/>  
+        <table/>  
       </div>
     );
   }
