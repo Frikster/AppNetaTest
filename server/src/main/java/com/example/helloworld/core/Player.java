@@ -126,7 +126,7 @@ public class Player {
     }
 
 
-        //<column name="number" type="numeric"/>
+    //<column name="number" type="numeric"/>
     //<column name="name" type="string"/>
     //<column name="nat" type="string"/>
     //<column name="pos" type="string"/>
@@ -153,7 +153,7 @@ public class Player {
                 Objects.equals(this.height, that.height) &&
                 Objects.equals(this.weight, that.weight) &&
                 Objects.equals(this.dob, that.dob) &&
-                Objects.equals(this.birthplace, that.birthplace) &&;
+                Objects.equals(this.birthplace, that.birthplace);
     }
 
     @Override
