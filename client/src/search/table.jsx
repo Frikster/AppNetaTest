@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactTable from "react-table";
+import moment from "moment";
 
 class TableComponent extends Component {
 
@@ -10,29 +11,31 @@ class TableComponent extends Component {
     } */
 
     render() {
+        let data = [];
+        if(Object.keys(this.props.data).length !== 0) {
+            data = this.props.data;
+        }
         
+        data.map(row => {
+            let dob_moment = moment(new Date(row.dob));
+            row.dob = dob_moment.format("YYYY-MM-DD");
+            return row;
+        });
 
-        //let data = this.props.data ? this.props.data : [];
-
-        let data = [{num: 1, name: 'b'},{num: 2, name: 'q'},{num: 3, name: 'a'}];
-        console.log(data)
         return (
         <div >
             <ReactTable
                 data={data}
-                noDataText="No data"
-                columns={[{Header: "Number", accessor: "num"},
-                          {Header: "Name", accessor: "name"}]}
-//                className="-striped -highlight"
-                          /*              
-   columns={[{Header: "Number", accessor: "num"},
-                {Header: "Name", accessor: "name"},
-                {Header: "Position", accessor: "pos"},
-                {Header: "Nationality", accessor: "nat"},
-                {Header: "Height", accessor: "height"},
-                {Header: "Weight", accessor: "weight"},
-                {Header: "Date of Birth", accessor: "dob"},
-                {Header: "Birthplace", accessor: "birthplace"}]} */
+                noDataText="No data"                                       
+                columns={[{Header: "Number", accessor: "id"},
+                    {Header: "Name", accessor: "name"},
+                    {Header: "Position", accessor: "pos"},
+                    {Header: "Nationality", accessor: "nat"},
+                    {Header: "Height", accessor: "height"},
+                    {Header: "Weight", accessor: "weight"},
+                    {Header: "Date of Birth", accessor: "dob"},
+                    {Header: "Birthplace", accessor: "birthplace"}]} 
+                className="-striped -highlight"
             />   
         </div>
         );

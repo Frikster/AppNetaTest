@@ -125,16 +125,6 @@ public class Player {
         this.birthplace = birthplace;
     }
 
-
-    //<column name="number" type="numeric"/>
-    //<column name="name" type="string"/>
-    //<column name="nat" type="string"/>
-    //<column name="pos" type="string"/>
-    //<column name="height" type="numeric"/>
-    //<column name="weight" type="numeric"/>
-    //<column name="dob" type="date"/>
-    //<column name="birthplace" type="string"/>
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
