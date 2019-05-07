@@ -110,6 +110,8 @@ public class Player {
     }
 
     public Date getDob() {
+        // Dates are correct on the backend
+        //System.out.println(dob);
         return dob;
     }
 

@@ -17,7 +17,10 @@ class TableComponent extends Component {
         }
         
         data.map(row => {
-            let dob_moment = moment(new Date(row.dob));
+            // Dates on backend are at midnight but off by one day on frontend
+            // Likely in Javascript midnight is considered part of the day ending rather than the day starting
+            // i.e. add one day on frontend
+            let dob_moment = moment(new Date(row.dob)).add(1, 'days');
             row.dob = dob_moment.format("YYYY-MM-DD");
             return row;
         });

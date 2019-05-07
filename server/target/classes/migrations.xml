@@ -16,7 +16,7 @@
             </column>
             <column name="nat" type="varchar(255)"/>
             <column name="pos" type="varchar(255)"/>
-            <column name="height" type="bigint"/>
+            <column name="height" type="float"/>
             <column name="weight" type="bigint"/>
             <column name="dob" type="date"/>
             <column name="birthplace" type="varchar(255)"/>

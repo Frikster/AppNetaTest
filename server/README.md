@@ -10,6 +10,8 @@ To run the server use the following commands.
 
         java -jar target/appneta-dropwizard-1.0.0.jar db migrate example.yml
 
+        java -jar target/appneta-dropwizard-1.0.0.jar db drop-all --confirm-delete-everything example.yml --dry-run
+
 * To run the server:
 
         java -jar target/appneta-dropwizard-1.0.0.jar server example.yml
