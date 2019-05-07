@@ -5,8 +5,7 @@ import NationalityTabComponent from './nationalityTab';
 class SearchComponent extends Component {
     constructor(props){
         super(props);
-        this.state = {searchInput: '', data: {}};
-
+        this.state = {searchInput: '', data: []};
         this.handleSearchChange = this.handleSearchChange.bind(this);
     }
 
@@ -14,7 +13,10 @@ class SearchComponent extends Component {
     {
         fetch(`http://localhost:8080/players`)
             .then(blob => blob.json())
-            .then(res => this.setState({data: res}));
+            .then(res => {
+                this.data = res;
+                this.setState({data: res})}
+            );
     }   
 
     handleSearchChange(e) {
@@ -26,8 +28,8 @@ class SearchComponent extends Component {
         <div >
             <input type="text" placeholder="Search..."
             onChange={this.handleSearchChange}/>
-            <NationalityTabComponent/>
-            <TableComponent data={this.state.data}/>
+            <NationalityTabComponent data={this.state.data} searchInput={this.state.searchInput}/>
+            <TableComponent data={this.state.data} searchInput={this.state.searchInput}/>
         </div>
         );
     }

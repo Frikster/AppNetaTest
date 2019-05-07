@@ -11,11 +11,7 @@ class TableComponent extends Component {
     } */
 
     render() {
-        let data = [];
-        if(Object.keys(this.props.data).length !== 0) {
-            data = this.props.data;
-        }
-        
+        let data = this.props.data;        
         data.map(row => {
             // Dates on backend are at midnight but off by one day on frontend
             // Likely in Javascript midnight is considered part of the day ending rather than the day starting
@@ -24,6 +20,19 @@ class TableComponent extends Component {
             row.dob = dob_moment.format("YYYY-MM-DD");
             return row;
         });
+        if(this.props.searchInput) {
+            let searchInput = this.props.searchInput.toLowerCase();
+            data = this.props.data.filter(row => {
+                let rowKeys = Object.keys(row);
+                for(let i = 0; i < rowKeys.length; i++) {
+                    let colName = rowKeys[i];
+                    if(row[colName].toString().toLowerCase().includes(searchInput)) {
+                        return true;
+                    }
+                }
+                return false;
+            });
+        }
 
         return (
         <div >
