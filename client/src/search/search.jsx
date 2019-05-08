@@ -53,9 +53,12 @@ class SearchComponent extends Component {
     
     render() {        
         return (
-        <div >
-            <input type="text" placeholder="Search..."
-            onChange={this.handleSearchChange}/>
+        <div className="search-component">
+            <div className="search-bar-div">
+                <span className="fa fa-search"></span>
+                <input type="text" placeholder="Search..."
+                onChange={this.handleSearchChange}/>
+            </div>
             <NationalityTabComponent data={this.dataFiltered()}/>
             <TableComponent data={this.dataFiltered()}/>
         </div>

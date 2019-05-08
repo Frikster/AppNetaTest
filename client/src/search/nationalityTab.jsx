@@ -5,7 +5,7 @@ class SearchComponent extends Component {
     let nats = this.props.data.map(row => row.nat);
     let natCounts = {};
     nats.forEach(nat => {
-      nat in nats ? natCounts[nat]++ : natCounts[nat] = 1;
+      nat in natCounts ? natCounts[nat]++ : natCounts[nat] = 1;
     });
     let natsJsx = Object.keys(natCounts).map(nat => {
       return (
@@ -15,7 +15,7 @@ class SearchComponent extends Component {
 
 
     return (
-      <div >
+      <div className="nationalityTab-component shadow">
         {natsJsx}
       </div>
     );
